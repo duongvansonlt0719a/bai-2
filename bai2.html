@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Đăng ký học trực tuyến</h1>
+
+	
+<table>
+	<tr>
+		<td>Họ tên</td>
+		<td><input type="text" name="" id="hoten"></td>
+		<td><div id="1"></div></td>
+	</tr>
+	<tr>
+		<td>Tên đăng nhập</td>
+		<td><input type="text" name="" id="tdn"></td>
+		<td><div id="2"></div></td>
+	</tr>
+	<tr>
+		<td>Điện thoại</td>
+		<td><input type="text" name="" id="dt"></td>
+		<td><div id="3"></div></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="text" name="" id="email"></td>
+		<td><div id="4"></div></td>
+	</tr>
+	<tr>
+		<td>Giới tính</td>
+		<td><input type="radio" name="" checked="">Nam
+		<input type="radio" name="">Nữ</td>
+	</tr>
+	<tr>
+		<td>Khóa học đăng kí</td>
+		<td>
+			<select>
+			<option>Lập trình PHP</option>
+			<option>Thiết kế đồ họa</option>
+			<option>Lập trình Android</option>
+			<option>Kỹ thuật làm phim</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Khóa học đã tham gia</td>
+		<td><input type="checkbox" name="">Lập trình PHP</td>
+		<td><input type="checkbox" name="">Thiết kế đồ họa</td>
+		<td><input type="checkbox" name="">Lập trình Android</td>
+		<td><input type="checkbox" name="">Kỹ thuật làm phim</td>
+	</tr>
+	<tr>
+		<td>Ghi chú</td>
+		<td><textarea name="diachi"></textarea><br></td>
+	</tr>
+
+	<tr>
+		<td>Mã xác nhận</td>
+		<td><input type="text" name=""></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="Đăng ký" name="" onclick="Dangky()"></td>
+	</tr>
+</table>
+<script type="text/javascript">
+	
+	function Dangky(){
+
+		var hoten1=document.getElementById('hoten').value;
+		var tdn1 = document.getElementById('tdn').value;
+		var dt1=document.getElementById('dt').value;
+		var email1= document.getElementById('email').value;
+		var hoten2=/^.{3,20}$/;
+		var tdn2=/^.\S{5,15}$/;
+		var dt2 = /^(0)\d{9}$/;
+		var email2 = /^.\S\w{3,10}(@gmail.com)$/;
+
+
+		if (hoten1=="") {
+			alert('Họ và tên không được bỏ trống');
+		}
+			else if (hoten2.test(hoten1)) {
+			document.getElementById('1').innerText="Hợp Lệ";
+		}
+		else {
+			document.getElementById('1').innerText=" Không Hợp Lệ";
+		}
+
+		if (tdn1=="") {
+			alert('Tên đăng nhập không được bỏ trống');
+		}
+			else if (tdn2.test(tdn1)) {
+				document.getElementById('2').innerText="Hợp Lệ";
+		}
+				else {
+					document.getElementById('2').innerText='Tên đăng nhập không được chứa dấu cách hoặc kí tự đặc biệt';
+		}
+
+		if (dt1=="") {
+			alert('Số điện thoại không được bỏ trống');
+		}
+		else if (dt2.test(dt1)) {
+			document.getElementById('3').innerText="Hợp lệ";
+		}
+		else{
+			document.getElementById('3').innerText="Số điện thoại không đúng, vui lòng nhập lại";
+		}
+
+		if (email1=="") {
+			alert('Email không được để trống');
+		}
+		else if (email2.test(email1)) {
+			document.getElementById('4').innerText="Hợp Lệ";
+		}
+		else{
+			document.getElementById('4').innerText="Email không hợp lệ"
+		}
+
+
+
+
+
+
+
+	}
+
+
+
+
+</script>
